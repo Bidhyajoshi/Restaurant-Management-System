@@ -1,0 +1,834 @@
+/* =====================================================
+   GENERAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f5f8;
+    color: #182238;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    background: #182238;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+}
+
+header p {
+    margin: 0;
+    opacity: 0.85;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card {
+    background: white;
+    padding: 28px;
+    margin-bottom: 28px;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+#bookingForm {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border:
+        1px solid #ccd1d9;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+
+    border-color:
+        #182238;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(24, 34, 56, 0.08);
+}
+
+input[readonly] {
+    background: #f5f6f8;
+}
+
+small {
+    margin-top: 6px;
+
+    color: #687080;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   HALL OPTIONS
+===================================================== */
+
+.hall-options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.checkbox-option {
+    border:
+        1px solid #d3d7df;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: normal !important;
+
+    transition: 0.2s;
+}
+
+.checkbox-option:hover {
+    background: #f4f6fa;
+
+    border-color:
+        #182238;
+}
+
+.checkbox-option input {
+    width: auto;
+
+    margin-right: 8px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.button-row {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 5px;
+}
+
+button {
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 12px 20px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.primary-btn {
+    background: #182238;
+
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #273653;
+
+    transform:
+        translateY(-1px);
+}
+
+.secondary-btn {
+    background: #e5e8ef;
+
+    color: #182238;
+}
+
+.secondary-btn:hover {
+    background: #d7dbe4;
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message {
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+}
+
+.message.success {
+    background: #dff5e7;
+
+    color: #08753b;
+}
+
+.message.error {
+    background: #ffe1e1;
+
+    color: #a50000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =====================================================
+   LAYOUT INFO
+===================================================== */
+
+.layout-info {
+    margin: 15px 0;
+
+    padding: 15px;
+
+    background: #f3f5f9;
+
+    border-radius: 10px;
+
+    border:
+        1px solid #e1e4ea;
+}
+
+.layout-info p {
+    margin: 7px 0;
+}
+
+
+/* =====================================================
+   LAYOUT GRID
+===================================================== */
+
+.layout-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+
+/* =====================================================
+   LAYOUT CARD
+===================================================== */
+
+.layout-card {
+
+    border:
+        2px solid #d6d9df;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    background: white;
+
+    transition: 0.2s;
+
+    overflow: hidden;
+}
+
+.layout-card:hover {
+
+    border-color:
+        #182238;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.07);
+}
+
+.layout-card h3 {
+
+    margin-top: 0;
+
+    margin-bottom: 8px;
+
+    font-size: 22px;
+
+}
+
+.layout-card p {
+
+    margin-top: 0;
+
+    margin-bottom: 14px;
+
+    color: #5e6675;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   HALL PREVIEW
+===================================================== */
+
+.hall-preview {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 340px;
+
+    border:
+        3px solid #182238;
+
+    border-radius: 14px;
+
+    background: #f8f9fb;
+
+    overflow: hidden;
+
+    /*
+       Subtle inner spacing so the hall
+       looks like an actual floor plan.
+    */
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(24, 34, 56, 0.05);
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-item {
+
+    position: absolute;
+
+    width: 42px;
+
+    height: 42px;
+
+    background: #d9a15b;
+
+    border:
+        2px solid #99652e;
+
+    border-radius: 7px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 2;
+
+    box-shadow:
+        0 2px 5px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   CHAIRS
+===================================================== */
+
+.chair {
+
+    position: absolute;
+
+    width: 11px;
+
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #526b80;
+
+    border:
+        1px solid #3e5365;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 3;
+
+}
+
+
+/* =====================================================
+   SELECT LAYOUT BUTTON
+===================================================== */
+
+.select-layout-btn {
+
+    width: 100%;
+
+    margin-top: 16px;
+
+    background: #e5e8ef;
+
+    color: #182238;
+
+}
+
+.select-layout-btn:hover {
+
+    background: #d5dae5;
+
+}
+
+
+/* =====================================================
+   SELECTED LAYOUT
+===================================================== */
+
+.selected-layout {
+
+    border:
+        3px solid #182238;
+
+    background: #f1f4ff;
+
+}
+
+.selected-layout .select-layout-btn {
+
+    background: #182238;
+
+    color: white;
+
+}
+
+
+/* =====================================================
+   CONFIRM BOOKING
+===================================================== */
+
+.confirm-booking-btn {
+
+    margin-top: 20px;
+
+    padding:
+        13px 22px;
+
+    background: #182238;
+
+    color: white;
+
+}
+
+.confirm-booking-btn:hover:not(:disabled) {
+
+    background: #273653;
+
+}
+
+.confirm-booking-btn:disabled {
+
+    background: #9aa0aa;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =====================================================
+   SUGGESTION
+===================================================== */
+
+.suggestion {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    background: #fff3cd;
+
+    border:
+        1px solid #ffe08a;
+
+    color: #654d00;
+
+}
+
+.suggestion h3 {
+
+    margin-top: 0;
+
+}
+
+.suggestion p {
+
+    margin: 8px 0;
+
+}
+
+.suggestion li {
+
+    margin-bottom: 5px;
+
+}
+
+
+/* =====================================================
+   SAVED BOOKINGS
+===================================================== */
+
+.section-heading {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+}
+
+.booking-item {
+
+    border:
+        1px solid #d8dce3;
+
+    padding: 18px;
+
+    margin-top: 15px;
+
+    border-radius: 10px;
+
+    background: #fafbfc;
+
+}
+
+.booking-item h3 {
+
+    margin-top: 0;
+
+}
+
+.booking-item p {
+
+    margin: 7px 0;
+
+}
+
+.status {
+
+    display: inline-block;
+
+    padding:
+        5px 10px;
+
+    border-radius: 20px;
+
+    background: #dff5e7;
+
+    color: #08753b;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .layout-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    #bookingForm {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .form-group.full-width {
+
+        grid-column: auto;
+
+    }
+
+    .button-row {
+
+        grid-column: auto;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    main {
+
+        width: 94%;
+
+    }
+
+    .card {
+
+        padding: 18px;
+
+    }
+
+    .hall-options {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .button-row {
+
+        flex-direction: column;
+
+    }
+
+    header h1 {
+
+        font-size: 24px;
+
+    }
+
+    .hall-preview {
+
+        height: 300px;
+
+    }
+
+}
+
+
+
+
+/* ================================
+   BEAUTIFUL SUCCESS POPUP
+================================ */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 30, 27, 0.55);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+    padding: 20px;
+
+    animation: fadeIn 0.25s ease;
+}
+
+.popup-content {
+    width: 100%;
+    max-width: 420px;
+
+    background: #fffefa;
+    padding: 38px 32px;
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.18);
+
+    animation: popupAppear 0.3s ease;
+}
+
+.popup-content h2 {
+    color: #294b3b;
+    font-size: 27px;
+    margin: 0 0 18px;
+    font-weight: 700;
+}
+
+.popup-content p {
+    color: #626b64;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 10px 0;
+}
+
+.popup-content p:last-of-type {
+    background: #f0f4ef;
+    color: #294b3b;
+    padding: 11px;
+    border-radius: 9px;
+    font-weight: 600;
+}
+
+.popup-content button {
+    width: 100%;
+    margin-top: 22px;
+
+    padding: 13px;
+    border: none;
+    border-radius: 9px;
+
+    background: #294b3b;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.popup-content button:hover {
+    background: #1d382b;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        padding: 30px 22px;
+    }
+
+    .popup-content h2 {
+        font-size: 23px;
+    }
+}

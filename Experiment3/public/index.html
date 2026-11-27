@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Registration Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Customer Registration Management</h1>
+
+        <p>Search, update and delete existing customer registrations.</p>
+
+        <div class="search-section">
+
+            <label for="customerId">Customer ID</label>
+
+            <input
+                type="text"
+                id="customerId"
+                placeholder="Example: CUST-0001"
+            >
+
+            <button onclick="searchCustomer()">Search</button>
+
+        </div>
+
+
+        <div id="message"></div>
+
+
+        <div id="customerDetails" class="details-section">
+
+            <h2>Customer Details</h2>
+
+            <label>Customer ID</label>
+            <input type="text" id="displayCustomerId" readonly>
+
+            <label>Customer Name</label>
+            <input type="text" id="customerName">
+
+            <label>Phone</label>
+            <input type="text" id="phone">
+
+            <label>Date</label>
+            <input type="date" id="date">
+
+            <label>Remarks</label>
+            <textarea id="remarks"></textarea>
+
+
+            <div class="buttons">
+
+                <button onclick="updateCustomer()">
+                    Update
+                </button>
+
+                <button onclick="deleteCustomer()" class="delete-btn">
+                    Delete
+                </button>
+
+                <button onclick="alterFields()">Alter</button>
+
+            </div>
+
+            <div id="alterOptions" style="display: none;">
+               <button onclick="showAddField()">Add Field</button>
+                <button onclick="showDeleteField()">Delete Field</button>
+            </div>
+
+            <div id="addFieldSection" style="display: none;">
+
+                 <input
+                     type="text"
+                     id="newFieldName"
+                      placeholder="Enter new field name"
+                >
+
+                <input
+                   type="text"
+                   id="newFieldValue"
+                   placeholder="Enter field value"
+                >
+
+                 <button onclick="addField()">Add</button>
+
+            </div>
+
+            <div id="deleteFieldSection" style="display: none;">
+
+                <select id="fieldToDelete">
+                     <option value="">Select field to delete</option>
+                </select>
+
+                <button onclick="deleteField()">Delete Field</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+<!-- React popup will appear here -->
+<div id="react-popup-root"></div>
+
+<!-- React libraries -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- Our React code -->
+<script type="text/babel" src="experiment4react.js"></script>
+
+<!-- Existing JavaScript -->
+<script src="script.js"></script>
+
+</body>
+
+</html>

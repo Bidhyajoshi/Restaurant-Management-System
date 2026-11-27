@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>Hotel Room Management System</h1>
+
+    <p>Hall Booking & Table Layout Management</p>
+
+</header>
+
+
+<main>
+
+
+    <!-- ================= BOOKING FORM ================= -->
+
+    <section class="card">
+
+        <h2>Booking Details</h2>
+
+        <form id="bookingForm">
+
+
+            <!-- CUSTOMER NAME -->
+
+            <div class="form-group">
+
+                <label for="customerName">
+                    Customer Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter customer name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter 10 digit phone number"
+                    maxlength="10"
+                    pattern="[0-9]{10}"
+                    inputmode="numeric"
+                    required
+                >
+
+                <small>
+                    Enter exactly 10 digits.
+                </small>
+
+            </div>
+
+
+            <!-- HALL DIMENSIONS -->
+
+            <div class="form-group">
+
+                <label>
+                    Hall Dimensions
+                </label>
+
+                <div class="hall-options">
+
+
+                    <label class="checkbox-option">
+
+                        <input
+                            type="checkbox"
+                            class="hall-checkbox"
+                            data-width="10"
+                            data-length="10"
+                        >
+
+                        10 × 10 ft
+
+                    </label>
+
+
+                    <label class="checkbox-option">
+
+                        <input
+                            type="checkbox"
+                            class="hall-checkbox"
+                            data-width="15"
+                            data-length="10"
+                        >
+
+                        15 × 10 ft
+
+                    </label>
+
+
+                    <label class="checkbox-option">
+
+                        <input
+                            type="checkbox"
+                            class="hall-checkbox"
+                            data-width="20"
+                            data-length="15"
+                        >
+
+                        20 × 15 ft
+
+                    </label>
+
+
+                    <label class="checkbox-option">
+
+                        <input
+                            type="checkbox"
+                            class="hall-checkbox"
+                            data-width="25"
+                            data-length="20"
+                        >
+
+                        25 × 20 ft
+
+                    </label>
+
+
+                </div>
+
+                <small>
+                    Select one hall.
+                </small>
+
+            </div>
+
+
+            <!-- NUMBER OF TABLES -->
+
+            <div class="form-group">
+
+                <label for="tables">
+                    Number of Tables
+                </label>
+
+                <input
+                    type="number"
+                    id="tables"
+                    min="1"
+                    max="50"
+                    value="1"
+                    required
+                >
+
+            </div>
+
+
+            <!-- NUMBER OF CHAIRS -->
+
+            <div class="form-group">
+
+    <label for="chairsPerTable">
+        Number of Chairs per Table
+    </label>
+
+    <input
+        type="number"
+        id="chairsPerTable"
+        min="1"
+        max="10"
+        value="2"
+        required
+    >
+
+    <small>
+        Number of chairs for each table. Maximum 10 chairs per table.
+    </small>
+
+</div>
+
+
+            <!-- BOOKING DATE -->
+
+            <div class="form-group">
+
+                <label for="date">
+                    Booking Date
+                </label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+                <small>
+                    Past dates are not allowed.
+                </small>
+
+            </div>
+
+
+            <!-- CUSTOMER ID -->
+
+            <div class="form-group">
+
+                <label for="customerId">
+                    Customer ID
+                </label>
+
+                <input
+                    type="text"
+                    id="customerId"
+                    value="Generated Automatically"
+                    readonly
+                >
+
+            </div>
+
+
+            <!-- REMARKS -->
+
+            <div class="form-group full-width">
+
+                <label for="remarks">
+                    Remarks
+                </label>
+
+                <textarea
+                    id="remarks"
+                    rows="4"
+                    placeholder="Enter any additional requirements"
+                ></textarea>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="button-row">
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Generate Possible Layouts
+                </button>
+
+
+                <button
+                    type="button"
+                    id="clearBtn"
+                    class="secondary-btn"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+        <!-- MESSAGE -->
+
+        <div
+            id="message"
+            class="message hidden"
+        ></div>
+
+    </section>
+
+
+
+    <!-- ================= POSSIBLE LAYOUTS ================= -->
+
+    <section
+        id="layoutSection"
+        class="card hidden"
+    >
+
+        <h2>
+            Possible Layouts
+        </h2>
+
+        <p id="layoutSummary"></p>
+
+
+        <div
+            id="layoutInfo"
+            class="layout-info"
+        ></div>
+
+
+        <div
+            id="layoutGrid"
+            class="layout-grid"
+        ></div>
+
+
+        <div
+            id="suggestion"
+            class="suggestion hidden"
+        ></div>
+
+
+        <button
+            id="confirmBookingBtn"
+            class="confirm-booking-btn"
+            disabled
+        >
+            Confirm Booking
+        </button>
+
+    </section>
+
+
+
+    <!-- ================= SAVED BOOKINGS ================= -->
+
+    <section class="card">
+
+        <div class="section-heading">
+
+            <h2>
+                Saved Bookings
+            </h2>
+
+            <button
+                id="refreshBtn"
+                class="secondary-btn"
+            >
+                Refresh
+            </button>
+
+        </div>
+
+
+        <div id="bookingsList"></div>
+
+    </section>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.app-container {
+  max-width: 750px;
+  margin: 45px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #1d3557;
+  margin-bottom: 15px;
+}
+
+.app-container > p {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+.search-section,
+.customer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+h2 {
+  color: #1d3557;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+button {
+  padding: 12px 18px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.count-button {
+  background: #0f766e;
+}
+
+.count-button:hover {
+  background: #115e59;
+}
+
+.message {
+  text-align: center;
+  margin-top: 15px;
+  color: #15803d;
+}
+
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.popup-content h1 {
+  font-size: 45px;
+  color: #2563eb;
+  margin: 20px 0;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}

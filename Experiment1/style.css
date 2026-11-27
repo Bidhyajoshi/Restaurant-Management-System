@@ -1,0 +1,947 @@
+/* =========================================================
+   BASIC SETTINGS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f2ed;
+    color: #2d2521;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    background: #33251f;
+    color: white;
+    padding: 25px 7%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c79a6b;
+    border-radius: 14px;
+    font-size: 28px;
+}
+
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: #d8c9bd;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+    width: 92%;
+    max-width: 1250px;
+    margin: 30px auto;
+}
+
+
+/* =========================================================
+   CONTROL PANEL
+========================================================= */
+
+.control-panel {
+    background: white;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.section-title h2 {
+    color: #4e3426;
+    font-size: 24px;
+}
+
+.section-title p {
+    color: #888;
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   OPTION SECTION
+========================================================= */
+
+.option-section {
+    margin-top: 23px;
+}
+
+.option-section h3 {
+    font-size: 16px;
+    color: #4e3426;
+    margin-bottom: 11px;
+}
+
+
+/* =========================================================
+   NUMBER OPTIONS
+========================================================= */
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.options label {
+    cursor: pointer;
+}
+
+.options input {
+    display: none;
+}
+
+.options span {
+    width: 46px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #faf8f5;
+    border: 2px solid #ddd2c8;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #5c493e;
+
+    transition: all 0.2s ease;
+}
+
+.options span:hover {
+    border-color: #a67855;
+    transform: translateY(-2px);
+}
+
+.options input:checked + span {
+    background: #6f4935;
+    border-color: #6f4935;
+    color: white;
+
+    box-shadow: 0 4px 10px rgba(111, 73, 53, 0.25);
+}
+
+
+/* =========================================================
+   TABLE DIMENSION OPTIONS
+========================================================= */
+
+.dimension-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.dimension-options label {
+    cursor: pointer;
+}
+
+.dimension-options input {
+    display: none;
+}
+
+.dimension-options span {
+    display: flex;
+    flex-direction: column;
+
+    padding: 14px;
+
+    background: #faf8f5;
+
+    border: 2px solid #ddd2c8;
+
+    border-radius: 9px;
+
+    transition: 0.2s;
+}
+
+.dimension-options b {
+    color: #4e3426;
+    margin-bottom: 5px;
+}
+
+.dimension-options small {
+    color: #888;
+}
+
+.dimension-options span:hover {
+    border-color: #a67855;
+}
+
+.dimension-options input:checked + span {
+    background: #f1e5da;
+    border-color: #6f4935;
+}
+
+
+/* =========================================================
+   FLOOR SECTION
+========================================================= */
+
+.floor-section {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+
+.floor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.floor-header h2 {
+    color: #4e3426;
+}
+
+.floor-header p {
+    color: #888;
+    margin-top: 4px;
+}
+
+.available {
+    background: #e9f6ec;
+    color: #2e7d32;
+
+    padding: 9px 15px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   RESTAURANT FLOOR
+========================================================= */
+
+.restaurant-floor {
+
+    width: 100%;
+
+    min-height: 650px;
+
+    padding: 60px 55px;
+
+    border: 7px solid #3a2d27;
+
+    border-radius: 15px;
+
+    background-color: #eee8e0;
+
+    background-image:
+        linear-gradient(#dcd5cd 1px, transparent 1px),
+        linear-gradient(90deg, #dcd5cd 1px, transparent 1px);
+
+    background-size: 35px 35px;
+
+    display: grid;
+
+    /*
+       Three tables in one row.
+       The columns stretch according to
+       the available hall width.
+    */
+
+    grid-template-columns:
+        repeat(3, minmax(190px, 1fr));
+
+    grid-auto-rows: 190px;
+
+    column-gap: 35px;
+
+    row-gap: 55px;
+
+    align-items: center;
+
+    justify-items: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   DINING TABLE AREA
+========================================================= */
+
+.dining-table {
+
+    position: relative;
+
+    width: 190px;
+
+    height: 170px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ACTUAL TABLE
+========================================================= */
+
+.table {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 105px;
+    height: 70px;
+
+    background: #93664d;
+
+    border: 5px solid #654330;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 7px 12px rgba(0, 0, 0, 0.20);
+
+    transition: all 0.3s ease;
+}
+
+
+/* =========================================================
+   CHAIR
+========================================================= */
+
+.chair {
+
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    background: #a7836b;
+
+    border: 3px solid #634637;
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 3px 5px rgba(0, 0, 0, 0.15);
+
+    display: none;
+}
+
+
+/* =========================================================
+   CHAIR POSITIONS
+========================================================= */
+
+
+/*
+   The table is approximately 105px wide.
+
+   Three chairs are evenly distributed
+   across the top and bottom.
+*/
+
+
+/* ---------- TOP ---------- */
+
+.c1 {
+    top: 5px;
+    left: 57px;
+}
+
+.c2 {
+    top: 5px;
+    left: 82px;
+}
+
+.c3 {
+    top: 5px;
+    left: 107px;
+}
+
+
+/* ---------- BOTTOM ---------- */
+
+.c4 {
+    bottom: 5px;
+    left: 57px;
+}
+
+.c5 {
+    bottom: 5px;
+    left: 82px;
+}
+
+.c6 {
+    bottom: 5px;
+    left: 107px;
+}
+
+
+/* ---------- LEFT ---------- */
+
+.c7 {
+    left: 4px;
+    top: 72px;
+}
+
+
+/* ---------- RIGHT ---------- */
+
+.c10 {
+    right: 4px;
+    top: 72px;
+}
+
+
+/* =========================================================
+   2 CHAIRS
+========================================================= */
+
+/*
+        🪑
+
+    ┌─────────┐
+    │  TABLE  │
+    └─────────┘
+
+        🪑
+*/
+
+body:has(#chair2:checked) .c2,
+body:has(#chair2:checked) .c5 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   4 CHAIRS
+========================================================= */
+
+/*
+        🪑   🪑
+
+    ┌───────────┐
+    │   TABLE   │
+    └───────────┘
+
+        🪑   🪑
+*/
+
+body:has(#chair4:checked) .c1,
+body:has(#chair4:checked) .c3,
+body:has(#chair4:checked) .c4,
+body:has(#chair4:checked) .c6 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   6 CHAIRS
+========================================================= */
+
+/*
+        🪑  🪑  🪑
+
+    ┌──────────────┐
+    │    TABLE     │
+    └──────────────┘
+
+        🪑  🪑  🪑
+*/
+
+body:has(#chair6:checked) .c1,
+body:has(#chair6:checked) .c2,
+body:has(#chair6:checked) .c3,
+body:has(#chair6:checked) .c4,
+body:has(#chair6:checked) .c5,
+body:has(#chair6:checked) .c6 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   8 CHAIRS
+========================================================= */
+
+/*
+        🪑  🪑  🪑
+
+     🪑 ┌──────────┐ 🪑
+        │  TABLE   │
+        └──────────┘
+
+        🪑  🪑  🪑
+*/
+
+body:has(#chair8:checked) .c1,
+body:has(#chair8:checked) .c2,
+body:has(#chair8:checked) .c3,
+body:has(#chair8:checked) .c4,
+body:has(#chair8:checked) .c5,
+body:has(#chair8:checked) .c6,
+body:has(#chair8:checked) .c7,
+body:has(#chair8:checked) .c10 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   TABLE COUNT
+========================================================= */
+
+
+/* Only TABLE 1 visible initially */
+
+.table-2,
+.table-3,
+.table-4,
+.table-5,
+.table-6,
+.table-7,
+.table-8,
+.table-9,
+.table-10 {
+
+    display: none;
+}
+
+
+/* =========================================================
+   2 TABLES
+========================================================= */
+
+body:has(#table2:checked) .table-2 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   3 TABLES
+========================================================= */
+
+body:has(#table3:checked) .table-2,
+body:has(#table3:checked) .table-3 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   4 TABLES
+========================================================= */
+
+body:has(#table4:checked) .table-2,
+body:has(#table4:checked) .table-3,
+body:has(#table4:checked) .table-4 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   5 TABLES
+========================================================= */
+
+body:has(#table5:checked) .table-2,
+body:has(#table5:checked) .table-3,
+body:has(#table5:checked) .table-4,
+body:has(#table5:checked) .table-5 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   6 TABLES
+========================================================= */
+
+body:has(#table6:checked) .table-2,
+body:has(#table6:checked) .table-3,
+body:has(#table6:checked) .table-4,
+body:has(#table6:checked) .table-5,
+body:has(#table6:checked) .table-6 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   7 TABLES
+========================================================= */
+
+body:has(#table7:checked) .table-2,
+body:has(#table7:checked) .table-3,
+body:has(#table7:checked) .table-4,
+body:has(#table7:checked) .table-5,
+body:has(#table7:checked) .table-6,
+body:has(#table7:checked) .table-7 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   8 TABLES
+========================================================= */
+
+body:has(#table8:checked) .table-2,
+body:has(#table8:checked) .table-3,
+body:has(#table8:checked) .table-4,
+body:has(#table8:checked) .table-5,
+body:has(#table8:checked) .table-6,
+body:has(#table8:checked) .table-7,
+body:has(#table8:checked) .table-8 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   9 TABLES
+========================================================= */
+
+body:has(#table9:checked) .table-2,
+body:has(#table9:checked) .table-3,
+body:has(#table9:checked) .table-4,
+body:has(#table9:checked) .table-5,
+body:has(#table9:checked) .table-6,
+body:has(#table9:checked) .table-7,
+body:has(#table9:checked) .table-8,
+body:has(#table9:checked) .table-9 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   10 TABLES
+========================================================= */
+
+body:has(#table10:checked) .table-2,
+body:has(#table10:checked) .table-3,
+body:has(#table10:checked) .table-4,
+body:has(#table10:checked) .table-5,
+body:has(#table10:checked) .table-6,
+body:has(#table10:checked) .table-7,
+body:has(#table10:checked) .table-8,
+body:has(#table10:checked) .table-9,
+body:has(#table10:checked) .table-10 {
+
+    display: block;
+}
+
+
+/* =========================================================
+   TABLE DIMENSIONS
+========================================================= */
+
+
+/* SMALL */
+
+body:has(#small:checked) .table {
+
+    width: 95px;
+    height: 65px;
+}
+
+
+/* MEDIUM */
+
+body:has(#medium:checked) .table {
+
+    width: 110px;
+    height: 75px;
+}
+
+
+/* LARGE */
+
+body:has(#large:checked) .table {
+
+    width: 125px;
+    height: 85px;
+}
+
+
+/* EXTRA LARGE */
+
+body:has(#extra:checked) .table {
+
+    width: 140px;
+    height: 95px;
+}
+
+
+/* =========================================================
+   EXTRA LARGE TABLE — MOVE SIDE CHAIRS OUTWARD
+========================================================= */
+
+body:has(#extra:checked) .c7 {
+    left: -5px;
+}
+
+body:has(#extra:checked) .c10 {
+    right: -5px;
+}
+
+
+/* =========================================================
+   LARGE TABLE — MOVE SIDE CHAIRS OUTWARD
+========================================================= */
+
+body:has(#large:checked) .c7 {
+    left: 0;
+}
+
+body:has(#large:checked) .c10 {
+    right: 0;
+}
+
+
+/* =========================================================
+   LEGEND
+========================================================= */
+
+.legend {
+
+    background: white;
+
+    margin-top: 25px;
+
+    padding: 20px 25px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.legend h3 {
+
+    text-align: center;
+
+    color: #4e3426;
+
+    margin-bottom: 15px;
+}
+
+.legend-content {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 45px;
+}
+
+.legend-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+.legend-table {
+
+    width: 38px;
+    height: 23px;
+
+    background: #93664d;
+
+    border: 3px solid #654330;
+
+    border-radius: 5px;
+}
+
+.legend-chair {
+
+    width: 23px;
+    height: 23px;
+
+    background: #a7836b;
+
+    border: 3px solid #634637;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    margin-top: 35px;
+
+    background: #33251f;
+
+    color: #d8c9bd;
+
+    text-align: center;
+
+    padding: 18px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .restaurant-floor {
+
+        grid-template-columns:
+            repeat(2, minmax(190px, 1fr));
+
+        column-gap: 30px;
+
+        row-gap: 55px;
+
+        padding: 50px 30px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .dimension-options {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .restaurant-floor {
+
+        grid-template-columns: 190px;
+
+        justify-content: center;
+
+        padding: 45px 15px;
+
+        row-gap: 50px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .control-panel,
+    .floor-section {
+        padding: 18px;
+    }
+
+    .dimension-options {
+        grid-template-columns: 1fr;
+    }
+
+    .floor-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .restaurant-floor {
+
+        min-height: 500px;
+
+        padding: 40px 10px;
+
+        grid-template-columns: 190px;
+
+        row-gap: 45px;
+    }
+
+    .legend-content {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 15px;
+    }
+}

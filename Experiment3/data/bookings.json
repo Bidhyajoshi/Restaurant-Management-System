@@ -1,0 +1,54 @@
+{
+  "bookings": [
+    {
+      "customerId": "CUST-0005",
+      "customerName": "ms saumya",
+      "hallWidth": 25,
+      "hallLength": 20,
+      "hallDimensions": "25 × 20 ft",
+      "tables": 1,
+      "chairsPerTable": 2,
+      "totalChairs": 2,
+      "date": "2026-10-29",
+      "remarks": "uysyfhskjn",
+      "selectedLayout": "Rows Layout",
+      "createdAt": "2026-10-05T08:09:10.529Z",
+      "Email": "saumya123@gmail.com"
+    },
+    {
+      "customerId": "CUST-0007",
+      "customerName": "Rohnit Pohnit",
+      "phone": "9103599437",
+      "hallWidth": 20,
+      "hallLength": 15,
+      "hallDimensions": "20 × 15 ft",
+      "tables": 5,
+      "chairsPerTable": 4,
+      "totalChairs": 20,
+      "date": "2026-11-20",
+      "remarks": "Birthday party",
+      "selectedLayout": "Rows Layout",
+      "createdAt": "2026-11-01T09:00:00.000Z",
+      "editCount": 1,
+      "Email id:": "rohnitpohnit007@gmail.com",
+      "Birthday Date:": "7th june"
+    },
+    {
+      "customerId": "CUST-0037",
+      "customerName": "Bidhya Joshi",
+      "phone": "7462933927",
+      "hallWidth": 25,
+      "hallLength": 20,
+      "hallDimensions": "25 × 20 ft",
+      "tables": 5,
+      "chairsPerTable": 4,
+      "totalChairs": 20,
+      "date": "2026-11-27",
+      "selectedLayout": "U-Shape Layout",
+      "createdAt": "2026-11-17T13:23:30.232Z",
+      "editCount": 2,
+      "email id:": "bidhyajoshi21@gamil.com",
+      "Date of Birth": "2005/10/03"
+    }
+  ]
+}
